@@ -70,7 +70,7 @@ class BarController:
     '''
     '''
     
-    @http_get('/bar/index.html')
+    @http_get('/bar/index.json')
     async def index(self, request):
         '''
         
@@ -78,7 +78,7 @@ class BarController:
         page = request.args.get('p', [1])[0]
         return json({'bar': 'index', 'page': page })
 
-    @http_get('/bar/info/<bid:int>')
+    @http_get('/bar/info/<bid:(\d+).json>')
     async def info(self, request, bid):
         return json({'bar': bid})
 ```
