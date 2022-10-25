@@ -104,3 +104,9 @@ def http_prefix(prefix: str):
     TODO
     给控制器添加前缀。
     '''
+
+def http_view(view_class, uri):
+    '''
+    TODO
+    sanic class based views
+    '''

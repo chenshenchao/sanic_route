@@ -13,6 +13,18 @@ class BarController:
         page = request.args.get('p', [1])[0]
         return json({'bar': 'index', 'page': page })
 
+    @http_get('/bar/index.json', version=2)
+    async def index2(self, request):
+        '''
+        
+        '''
+        page = request.args.get('p', [1])[0]
+        return json({
+            'bar': 'index',
+            'page': page,
+            'version': 2,
+        })
+
     @http_get('/bar/info/<bid:(\d+).json>')
     async def info(self, request, bid):
         return json({'bar': bid})
